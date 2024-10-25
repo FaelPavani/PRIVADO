@@ -66,12 +66,12 @@ body {
 
 .card {
     margin: 1% 0;
-    width: calc(fit-content + 120px);
-    background: transparent;
-    border-radius: 12px;
-    padding: 25px 40px;
-    border: 2px solid rgba(255, 255, 255, .2);
-    backdrop-filter: blur(10px);
+    /* width: calc(fit-content + 120px); */
+width: 500px;
+height: fit-content;
+padding: 25px 40px;
+perspective: 10000px;
+   
 }
 
 .card .main {
@@ -156,7 +156,7 @@ body {
 .input-box i {
     position: absolute;
     right: 20px;
-    top: 30%;
+    top: 80%;
     transform: translate(-50%);
     font-size: 20px;
     color: var(--logo-color);
@@ -253,11 +253,7 @@ body {
 .btn:hover {
     animation: pulse 0.6s ease infinite;
 }
-.card {
-    width: 200px;
-    height: 150px;
-    perspective: 1000px; /* Adiciona profundidade para a rotação */
-}
+
 
 .card-inner {
     width: 100%;
@@ -270,22 +266,30 @@ body {
 .card-front, .card-back {
     position: absolute;
     width: 100%;
-    height: 100%;
+    height: fit-content;
     backface-visibility: hidden; /* Esconde o verso quando não está visível */
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    border: 1px solid #ccc;
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    background-color: #fff;
+    width: calc(fit-content + 120px);
+    background: transparent;
+    border-radius: 12px;
+    padding: 25px 40px;
+    border: 2px solid rgba(255, 255, 255, .2);
+    backdrop-filter: blur(10px);
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.5)
 }
 
 .card-back {
-    transform: rotateY(180deg); /* Vira o verso do card */
-    background-color: #4CAF50; /* Cor diferente para o verso */
-    color: white;
+    transform: rotateY(180deg);     
+    margin: 1% 0;
+    width: calc(fit-content + 120px);
+    background: transparent;
+    border-radius: 12px;
+    padding: 25px 40px;
+    border: 2px solid rgba(255, 255, 255, .2);
+    backdrop-filter: blur(10px);
 }
 
 .card.rotated .card-inner {
@@ -296,4 +300,7 @@ body {
     margin-top: 10px;
     display: flex;
     gap: 5px;
+}
+input[type="date"]::-webkit-calendar-picker-indicator {
+    display: none; /* Esconde o ícone de calendário */
 }
